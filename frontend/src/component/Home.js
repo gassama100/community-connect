@@ -247,7 +247,7 @@ const FilterPopup = (props) => {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      name="wfh"
+                      name="Internship"
                       checked={searchOptions.jobType.wfh}
                       onChange={(event) => {
                         setSearchOptions({
@@ -260,7 +260,7 @@ const FilterPopup = (props) => {
                       }}
                     />
                   }
-                  label="Work From Home"
+                  label="Internship"
                 />
               </Grid>
             </Grid>

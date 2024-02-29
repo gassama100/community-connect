@@ -168,7 +168,7 @@ const CreateJobs = (props) => {
                   >
                     <MenuItem value="Full Time">Full Time</MenuItem>
                     <MenuItem value="Part Time">Part Time</MenuItem>
-                    <MenuItem value="Work From Home">Work From Home</MenuItem>
+                    <MenuItem value="Internship">Internship</MenuItem>
                   </TextField>
                 </Grid>
                 <Grid item>
@@ -189,6 +189,10 @@ const CreateJobs = (props) => {
                     <MenuItem value={4}>4 Months</MenuItem>
                     <MenuItem value={5}>5 Months</MenuItem>
                     <MenuItem value={6}>6 Months</MenuItem>
+                    <MenuItem value={7}>7 Months</MenuItem>
+                    <MenuItem value={8}>8 Months</MenuItem>
+                    <MenuItem value={9}>9 Months</MenuItem>
+                    <MenuItem value={10}>1 Year</MenuItem>
                   </TextField>
                 </Grid>
                 <Grid item>
