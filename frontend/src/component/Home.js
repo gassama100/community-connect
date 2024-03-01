@@ -1,61 +1,66 @@
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Button,
-  Chip,
+  Card,
+  CardContent,
+  Checkbox,
+  FormControlLabel,
   Grid,
   IconButton,
   InputAdornment,
   makeStyles,
+  Modal,
   Paper,
+  Slider,
   TextField,
   Typography,
-  Modal,
-  Slider,
-  FormControlLabel,
-  FormGroup,
-  MenuItem,
-  Checkbox,
+  MenuItem
 } from "@material-ui/core";
+import axios from 'axios'
+
 import Rating from "@material-ui/lab/Rating";
-import Pagination from "@material-ui/lab/Pagination";
-import axios from "axios";
 import SearchIcon from "@material-ui/icons/Search";
 import FilterListIcon from "@material-ui/icons/FilterList";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 
 import { SetPopupContext } from "../App";
-
 import apiList from "../lib/apiList";
 import { userType } from "../lib/isAuth";
 
 const useStyles = makeStyles((theme) => ({
-  body: {
-    height: "inherit",
+  root: {
+    flexDirection: 'row',
+    padding: theme.spacing(3),
   },
-  button: {
-    width: "100%",
-    height: "100%",
+  jobCard: {
+    marginBottom: theme.spacing(2),
+    borderRadius:20,
   },
-  jobTileOuter: {
-    padding: "30px",
-    margin: "20px 0",
-    boxSizing: "border-box",
-    width: "100%",
+  jobCardTitle:{
+    fontWeight:'900',
+    marginBottom:10
+    // textAlign:'center'
+
   },
-  popupDialog: {
-    height: "100%",
+  applyButton: {
+    marginLeft: "auto",
+    marginTop:20,
+  },
+  modalPaper: {
+    padding: theme.spacing(3),
+    outline: "none",
     display: "flex",
-    alignItems: "center",
+    flexDirection: "column",
     justifyContent: "center",
+    minWidth: "50%",
+    alignItems: "center",
   },
 }));
 
-const JobTile = (props) => {
+const JobTile = ({ job }) => {
   const classes = useStyles();
-  const { job } = props;
   const setPopup = useContext(SetPopupContext);
-
   const [open, setOpen] = useState(false);
   const [sop, setSop] = useState("");
 
@@ -98,9 +103,12 @@ const JobTile = (props) => {
       });
   };
 
+  
+
   const deadline = new Date(job.deadline).toLocaleDateString();
 
   return (
+<<<<<<< HEAD
     <Paper className={classes.jobTileOuter} elevation={3}>
       <Grid container>
         <Grid container item xs={9} spacing={1} direction='column'>
@@ -495,20 +503,67 @@ const FilterPopup = (props) => {
           </Grid>
 
           <Grid item>
+=======
+    <Grid item xs={12} sm={4} >
+    <Card className={classes.jobCard}>
+      <CardContent>
+        <Typography variant="h5" className={classes.jobCardTitle} >{job.title}</Typography>
+        <Rating value={job.rating !== -1 ? job.rating : null} readOnly />
+        <Typography variant="body1">Role: {job.jobType}</Typography>
+        <Typography variant="body1">Salary: GMB; {job.salary} per month</Typography>
+        <Typography variant="body1">
+          Duration: {job.duration !== 0 ? `${job.duration} month` : `Flexible`}
+        </Typography>
+        <Typography variant="body1">Posted By: {job.recruiter.name}</Typography>
+        <Typography variant="body1">Application Deadline: {deadline}</Typography>
+        <div>
+          {job.skillsets.map((skill, index) => (
+            <Typography variant="body2" component="span" key={index}>
+              {skill}
+            </Typography>
+          ))}
+        </div>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.applyButton}
+          onClick={() => setOpen(true)}
+          disabled={userType() === "recruiter"}
+        >
+          Apply
+        </Button>
+        <Modal open={open} onClose={handleClose}>
+          <Paper className={classes.modalPaper}>
+            <TextField
+              label="Write SOP (up to 250 words)"
+              multiline
+              rows={8}
+              fullWidth
+              variant="outlined"
+              value={sop}
+              onChange={(e) => setSop(e.target.value)}
+            />
+>>>>>>> 6873c02cdc1045fab14beb791cd00204ae5a9f50
             <Button
               variant="contained"
               color="primary"
-              style={{ padding: "10px 50px" }}
-              onClick={() => getData()}
+              onClick={handleApply}
+              style={{ marginTop: "16px" }}
             >
-              Apply
+              Submit
             </Button>
-          </Grid>
-        </Grid>
-      </Paper>
-    </Modal>
+          </Paper>
+        </Modal>
+      </CardContent>
+    </Card>
+  </Grid>
+
+
+
   );
 };
+
+
 
 const Home = (props) => {
   const [jobs, setJobs] = useState([]);
@@ -619,7 +674,121 @@ const Home = (props) => {
         });
       });
   };
-
+  const FilterPopup = ({ open, searchOptions, setSearchOptions, handleClose, getData }) => {
+    const classes = useStyles();
+  
+    const handleJobTypeChange = (event) => {
+      setSearchOptions({
+        ...searchOptions,
+        jobType: {
+          ...searchOptions.jobType,
+          [event.target.name]: event.target.checked,
+        },
+      });
+    };
+  
+    const handleSalaryChange = (event, newValue) => {
+      setSearchOptions({
+        ...searchOptions,
+        salary: newValue,
+      });
+    };
+  
+    const handleDurationChange = (event) => {
+      setSearchOptions({
+        ...searchOptions,
+        duration: event.target.value,
+      });
+    };
+  
+    const handleSortChange = (event, fieldName) => {
+      const sortType = event.target.checked ? "desc" : "asc";
+      setSearchOptions({
+        ...searchOptions,
+        sort: {
+          ...searchOptions.sort,
+          [fieldName]: {
+            status: event.target.checked,
+            desc: sortType === "desc",
+          },
+        },
+      });
+    };
+  
+    return (
+      <Modal open={open} onClose={handleClose}>
+        <Paper className={classes.modalPaper}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Typography variant="h6">Filter Options</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox color="primary" name="fullTime" checked={searchOptions.jobType.fullTime} onChange={handleJobTypeChange} />}
+                label="Full Time"
+              />
+              <FormControlLabel
+                control={<Checkbox color="primary" name="partTime" checked={searchOptions.jobType.partTime} onChange={handleJobTypeChange} />}
+                label="Part Time"
+              />
+              <FormControlLabel
+                control={<Checkbox color="primary" name="wfh" checked={searchOptions.jobType.wfh} onChange={handleJobTypeChange} />}
+                label="Work From Home"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant="body1">Salary Range</Typography>
+              <Slider
+                value={searchOptions.salary}
+                onChange={handleSalaryChange}
+                valueLabelDisplay="auto"
+                aria-labelledby="range-slider"
+                min={0}
+                max={100}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                select
+                label="Duration"
+                value={searchOptions.duration}
+                onChange={handleDurationChange}
+                fullWidth
+                variant="outlined"
+              >
+                <MenuItem value="0">All</MenuItem>
+                <MenuItem value="1">1</MenuItem>
+                <MenuItem value="2">2</MenuItem>
+                <MenuItem value="3">3</MenuItem>
+                <MenuItem value="4">4</MenuItem>
+                <MenuItem value="5">5</MenuItem>
+                <MenuItem value="6">6</MenuItem>
+                <MenuItem value="7">7</MenuItem>
+              </TextField>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant="body1">Sort by</Typography>
+              <FormControlLabel
+                control={<Checkbox color="primary" checked={searchOptions.sort.salary.status} onChange={(event) => handleSortChange(event, 'salary')} />}
+                label="Salary"
+              />
+              <FormControlLabel
+                control={<Checkbox color="primary" checked={searchOptions.sort.duration.status} onChange={(event) => handleSortChange(event, 'duration')} />}
+                label="Duration"
+              />
+              <FormControlLabel
+                control={<Checkbox color="primary" checked={searchOptions.sort.rating.status} onChange={(event) => handleSortChange(event, 'rating')} />}
+                label="Rating"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Button variant="contained" color="primary" onClick={getData}>Apply</Button>
+            </Grid>
+          </Grid>
+        </Paper>
+      </Modal>
+    );
+  };
   return (
     <>
       <Grid
@@ -678,9 +847,9 @@ const Home = (props) => {
           container
           item
           xs
-          direction="column"
+          direction="row"
           alignItems="stretch"
-          justify="center"
+          spacing={4}
         >
           {jobs.length > 0 ? (
             jobs.map((job) => {
