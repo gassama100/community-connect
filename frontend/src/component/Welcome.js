@@ -1,4 +1,5 @@
-import { Grid, Typography, Button } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 export const Welcome = (props) => {
   return (
@@ -15,9 +16,10 @@ export const Welcome = (props) => {
         <Typography variant="body1" align="center" paragraph>
           Are you ready to find your next opportunity?
         </Typography>
-        <Button variant="contained" color="primary" size="large" href="/jobs">
-          Explore Jobs
-        </Button>
+        {/* Replace Button with Link */}
+        <Link to="/login" style={{ textDecoration: 'none' }}>
+          <Typography variant="button" color="primary">Explore Jobs</Typography>
+        </Link>
       </Grid>
     </Grid>
   );
