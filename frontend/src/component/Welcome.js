@@ -1,6 +1,6 @@
 import { Grid, Typography, Button } from "@material-ui/core";
 
-const Welcome = (props) => {
+export const Welcome = (props) => {
   return (
     <Grid
       container
