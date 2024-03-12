@@ -6,6 +6,7 @@ import {
   Typography,
   makeStyles,
   Paper,
+  CircularProgress, // For loading indicator
 } from "@material-ui/core";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
@@ -27,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
   submitButton: {
     width: "300px",
   },
+  loading: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 }));
 
 const Login = (props) => {
@@ -34,6 +40,7 @@ const Login = (props) => {
   const setPopup = useContext(SetPopupContext);
 
   const [loggedin, setLoggedin] = useState(isAuth());
+  const [loading, setLoading] = useState(false); // Loading state
 
   const [loginDetails, setLoginDetails] = useState({
     email: "",
@@ -73,6 +80,7 @@ const Login = (props) => {
       return inputErrorHandler[obj].error;
     });
     if (verified) {
+      setLoading(true); // Set loading state
       axios
         .post(apiList.login, loginDetails)
         .then((response) => {
@@ -90,9 +98,12 @@ const Login = (props) => {
           setPopup({
             open: true,
             severity: "error",
-            message: err.response.data.message,
+            message: err.response.data.message || "An error occurred",
           });
           console.log(err.response);
+        })
+        .finally(() => {
+          setLoading(false); // Reset loading state
         });
     } else {
       setPopup({
@@ -137,8 +148,15 @@ const Login = (props) => {
             color="primary"
             onClick={() => handleLogin()}
             className={classes.submitButton}
+            disabled={loading} // Disable button when loading
           >
-            Login
+            {loading ? (
+              <div className={classes.loading}>
+                <CircularProgress size={24} color="inherit" />
+              </div>
+            ) : (
+              "Login"
+            )}
           </Button>
         </Grid>
       </Grid>

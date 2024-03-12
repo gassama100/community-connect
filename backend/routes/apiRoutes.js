@@ -42,6 +42,7 @@ router.post("/jobs", jwtAuth, (req, res) => {
     .save()
     .then(() => {
       res.json({ message: "Job added successfully to the database" });
+      // res.redirect("/myjobs");   # redirect page to the /myjobs page
     })
     .catch((err) => {
       res.status(400).json(err);

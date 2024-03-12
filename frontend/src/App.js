@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, { createContext, useState } from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Grid, makeStyles } from "@material-ui/core";
 
 import Welcome, { ErrorPage } from "./component/Welcome";
@@ -40,6 +40,10 @@ function App() {
     severity: "",
     message: "",
   });
+
+  // Function to check if user is logged in
+  const isLoggedIn = isAuth();
+
   return (
     <BrowserRouter>
       <SetPopupContext.Provider value={setPopup}>
@@ -85,6 +89,15 @@ function App() {
               </Route>
               <Route exact path="/employees">
                 <AcceptedApplicants />
+              </Route>
+              {/* Route for Explore Jobs */}
+              <Route exact path="/explore-jobs">
+                {/* Redirect to Login if not logged in */}
+                {isLoggedIn ? (
+                  <Redirect to="/explore-jobs" />
+                ) : (
+                  <Redirect to="/login" />
+                )}
               </Route>
               <Route>
                 <ErrorPage />
