@@ -53,6 +53,7 @@ function App() {
           </Grid>
           <Grid item className={classes.body}>
             <Switch>
+              {/* Route for Welcome Page */}
               <Route exact path="/">
                 <Welcome />
               </Route>
@@ -90,9 +91,8 @@ function App() {
               <Route exact path="/employees">
                 <AcceptedApplicants />
               </Route>
-              {/* Route for Explore Jobs */}
+              {/* Redirect to Login if not logged in */}
               <Route exact path="/explore-jobs">
-                {/* Redirect to Login if not logged in */}
                 {isLoggedIn ? (
                   <Redirect to="/explore-jobs" />
                 ) : (
