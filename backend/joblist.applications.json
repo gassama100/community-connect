@@ -1,0 +1,123 @@
+[{
+  "_id": {
+    "$oid": "65d3ddca85c6336e7079bb1e"
+  },
+  "status": "applied",
+  "userId": {
+    "$oid": "65d3dd5785c6336e7079bb1b"
+  },
+  "recruiterId": {
+    "$oid": "65d3dbe885c6336e7079bb18"
+  },
+  "jobId": {
+    "$oid": "65d3dce385c6336e7079bb1a"
+  },
+  "sop": "testing",
+  "dateOfApplication": {
+    "$date": "2024-02-19T23:01:30.360Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65def24276163dae102dd47a"
+  },
+  "status": "cancelled",
+  "userId": {
+    "$oid": "65dbaa84615fb006582a6133"
+  },
+  "recruiterId": {
+    "$oid": "65d3dbe885c6336e7079bb18"
+  },
+  "jobId": {
+    "$oid": "65d3dce385c6336e7079bb1a"
+  },
+  "sop": "apldhvcn mn",
+  "dateOfApplication": {
+    "$date": "2024-02-28T08:43:46.496Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65df112d9d9668aed8c6f1c5"
+  },
+  "status": "cancelled",
+  "userId": {
+    "$oid": "65dbaa84615fb006582a6133"
+  },
+  "recruiterId": {
+    "$oid": "65def37b76163dae102dd482"
+  },
+  "jobId": {
+    "$oid": "65def49e76163dae102dd488"
+  },
+  "sop": "I want to be a truck driver",
+  "dateOfApplication": {
+    "$date": "2024-02-28T10:55:41.320Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65df14029d9668aed8c6f1c7"
+  },
+  "status": "finished",
+  "userId": {
+    "$oid": "65dbaa84615fb006582a6133"
+  },
+  "recruiterId": {
+    "$oid": "65df0cfa9abc4aaef8e62e24"
+  },
+  "jobId": {
+    "$oid": "65df13ba9d9668aed8c6f1c6"
+  },
+  "sop": "Am interested call me on 3175418",
+  "dateOfApplication": {
+    "$date": "2024-02-28T11:07:46.778Z"
+  },
+  "__v": 0,
+  "dateOfJoining": {
+    "$date": "2024-02-28T11:11:09.578Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "65df76478a4ef343344386ef"
+  },
+  "status": "applied",
+  "userId": {
+    "$oid": "65dbaa84615fb006582a6133"
+  },
+  "recruiterId": {
+    "$oid": "65def37b76163dae102dd482"
+  },
+  "jobId": {
+    "$oid": "65def49e76163dae102dd488"
+  },
+  "sop": "Greetings Sir\nI am alieu sarr, a well experienced truck driver with 20 years of experience. \n\nContact: 2202020\nEmail: alieusarr@gmail.com",
+  "dateOfApplication": {
+    "$date": "2024-02-28T18:07:03.072Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e09582104e959ab46bedb8"
+  },
+  "status": "applied",
+  "userId": {
+    "$oid": "65dbaa84615fb006582a6133"
+  },
+  "recruiterId": {
+    "$oid": "65df0cfa9abc4aaef8e62e24"
+  },
+  "jobId": {
+    "$oid": "65e094d2104e959ab46bedb6"
+  },
+  "sop": "Greetings Sir\nMy name is Sheriff jarju, A painter man from Banjul. I am interested in this job.",
+  "dateOfApplication": {
+    "$date": "2024-02-29T14:32:34.818Z"
+  },
+  "__v": 0
+}]

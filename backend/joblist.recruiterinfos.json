@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "65d3dbe885c6336e7079bb19"
+  },
+  "userId": {
+    "$oid": "65d3dbe885c6336e7079bb18"
+  },
+  "name": "test",
+  "contactNumber": "+22049485498",
+  "bio": "just testing",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65def37b76163dae102dd483"
+  },
+  "userId": {
+    "$oid": "65def37b76163dae102dd482"
+  },
+  "name": "recruiter Pa Modou",
+  "contactNumber": "+22031754188",
+  "bio": "Am hiring a taxi driver",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65df0cfa9abc4aaef8e62e25"
+  },
+  "userId": {
+    "$oid": "65df0cfa9abc4aaef8e62e24"
+  },
+  "name": "TEST 1",
+  "contactNumber": "++22031754188",
+  "bio": "Recruiter ",
+  "__v": 0
+}]

@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "65df77168a4ef343344386f1"
+  },
+  "rating": null,
+  "category": "job",
+  "receiverId": {
+    "$oid": "65df13ba9d9668aed8c6f1c6"
+  },
+  "senderId": {
+    "$oid": "65dbaa84615fb006582a6133"
+  },
+  "__v": 0
+}]

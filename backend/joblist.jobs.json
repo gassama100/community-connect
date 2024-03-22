@@ -1,0 +1,208 @@
+[{
+  "_id": {
+    "$oid": "65d3dce385c6336e7079bb1a"
+  },
+  "activeApplications": 0,
+  "acceptedCandidates": 0,
+  "skillsets": [
+    "acountant",
+    "english",
+    "maths"
+  ],
+  "rating": -1,
+  "userId": {
+    "$oid": "65d3dbe885c6336e7079bb18"
+  },
+  "title": "account",
+  "maxApplicants": 10,
+  "maxPositions": 6,
+  "dateOfPosting": {
+    "$date": "2024-02-19T22:57:39.145Z"
+  },
+  "deadline": {
+    "$date": "2024-02-29T22:53:00.000Z"
+  },
+  "jobType": "Full Time",
+  "duration": 6,
+  "salary": 6996,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65def44e76163dae102dd487"
+  },
+  "activeApplications": 0,
+  "acceptedCandidates": 0,
+  "skillsets": [],
+  "rating": -1,
+  "userId": {
+    "$oid": "65def37b76163dae102dd482"
+  },
+  "title": "IT JOB 1",
+  "maxApplicants": 10,
+  "maxPositions": 2,
+  "dateOfPosting": {
+    "$date": "2024-02-28T08:52:30.662Z"
+  },
+  "deadline": {
+    "$date": "2025-12-02T08:49:00.000Z"
+  },
+  "jobType": "Full Time",
+  "duration": 0,
+  "salary": 5000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65def49e76163dae102dd488"
+  },
+  "activeApplications": 0,
+  "acceptedCandidates": 0,
+  "skillsets": [],
+  "rating": -1,
+  "userId": {
+    "$oid": "65def37b76163dae102dd482"
+  },
+  "title": "Truck Driver",
+  "maxApplicants": 3,
+  "maxPositions": 5,
+  "dateOfPosting": {
+    "$date": "2024-02-28T08:53:50.240Z"
+  },
+  "deadline": {
+    "$date": "2025-03-09T08:53:00.000Z"
+  },
+  "jobType": "Part Time",
+  "duration": 6,
+  "salary": 9000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65def8e23b1df441a8d2e151"
+  },
+  "activeApplications": 0,
+  "acceptedCandidates": 0,
+  "skillsets": [],
+  "rating": -1,
+  "userId": {
+    "$oid": "65def37b76163dae102dd482"
+  },
+  "title": "Internship job ofers",
+  "maxApplicants": 100,
+  "maxPositions": 30,
+  "dateOfPosting": {
+    "$date": "2024-02-28T09:12:02.266Z"
+  },
+  "deadline": {
+    "$date": "2025-03-09T09:11:00.000Z"
+  },
+  "jobType": "Internship",
+  "duration": 0,
+  "salary": 900,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65defb7c42c8c4853c21459e"
+  },
+  "activeApplications": 0,
+  "acceptedCandidates": 0,
+  "skillsets": [],
+  "rating": -1,
+  "userId": {
+    "$oid": "65def37b76163dae102dd482"
+  },
+  "title": "Test redirect",
+  "maxApplicants": 100,
+  "maxPositions": 30,
+  "dateOfPosting": {
+    "$date": "2024-02-28T09:23:08.314Z"
+  },
+  "deadline": {
+    "$date": "2024-03-09T09:22:00.000Z"
+  },
+  "jobType": "Full Time",
+  "duration": 0,
+  "salary": 100,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65df13ba9d9668aed8c6f1c6"
+  },
+  "activeApplications": 0,
+  "acceptedCandidates": 1,
+  "skillsets": [
+    "Cleaning skills",
+    "discipline",
+    "puntual"
+  ],
+  "rating": null,
+  "userId": {
+    "$oid": "65df0cfa9abc4aaef8e62e24"
+  },
+  "title": "Cleaner",
+  "maxApplicants": 5,
+  "maxPositions": 2,
+  "dateOfPosting": {
+    "$date": "2024-02-28T11:06:34.835Z"
+  },
+  "deadline": {
+    "$date": "2024-03-09T11:05:00.000Z"
+  },
+  "jobType": "Internship",
+  "duration": 1,
+  "salary": 2500,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e094d2104e959ab46bedb6"
+  },
+  "activeApplications": 0,
+  "acceptedCandidates": 0,
+  "skillsets": [],
+  "rating": -1,
+  "userId": {
+    "$oid": "65df0cfa9abc4aaef8e62e24"
+  },
+  "title": "PAINTER",
+  "maxApplicants": 10,
+  "maxPositions": 3,
+  "dateOfPosting": {
+    "$date": "2024-02-29T14:29:38.264Z"
+  },
+  "deadline": {
+    "$date": "2024-03-15T14:28:00.000Z"
+  },
+  "jobType": "Part Time",
+  "duration": 2,
+  "salary": 2500,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f5bd93b17a10323ca6b409"
+  },
+  "activeApplications": 0,
+  "acceptedCandidates": 0,
+  "skillsets": [],
+  "rating": -1,
+  "userId": {
+    "$oid": "65df0cfa9abc4aaef8e62e24"
+  },
+  "title": "Technician",
+  "maxApplicants": 2,
+  "maxPositions": 2,
+  "dateOfPosting": {
+    "$date": "2024-03-16T15:41:07.843Z"
+  },
+  "deadline": {
+    "$date": "2024-04-28T15:39:00.000Z"
+  },
+  "jobType": "Internship",
+  "duration": 1,
+  "salary": 1999,
+  "__v": 0
+}]

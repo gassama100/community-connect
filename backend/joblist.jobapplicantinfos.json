@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "65d3dd5785c6336e7079bb1c"
+  },
+  "skills": [
+    "Book keeping",
+    "balance sheeet",
+    "quick book"
+  ],
+  "rating": -1,
+  "userId": {
+    "$oid": "65d3dd5785c6336e7079bb1b"
+  },
+  "name": "Fatima",
+  "education": [
+    {
+      "_id": {
+        "$oid": "65d3dd5785c6336e7079bb1d"
+      },
+      "institutionName": "MDI",
+      "startYear": 2020,
+      "endYear": 2024
+    }
+  ],
+  "resume": "",
+  "profile": "",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dbaa85615fb006582a6134"
+  },
+  "skills": [],
+  "rating": -1,
+  "userId": {
+    "$oid": "65dbaa84615fb006582a6133"
+  },
+  "name": "Pa Modou Gassama",
+  "education": [
+    {
+      "_id": {
+        "$oid": "65f5c05ab17a10323ca6b40a"
+      },
+      "institutionName": "CMIT",
+      "startYear": 2018,
+      "endYear": 2023
+    }
+  ],
+  "resume": "",
+  "profile": "",
+  "__v": 5
+}]
