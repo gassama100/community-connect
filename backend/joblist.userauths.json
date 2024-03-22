@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "65d3dbe885c6336e7079bb18"
+  },
+  "email": "test@gmail.com",
+  "password": "$2b$10$O5P0DIUCrXiwDGvRoiRhGeMm/xbymh21nmXhjGmxzltiixsfJEMK6",
+  "type": "recruiter",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65d3dd5785c6336e7079bb1b"
+  },
+  "email": "fatima@gmail.com",
+  "password": "$2b$10$WZY2wceB5XdAbOvfk11XTOhwrMYeoRtgDWj1U7OUFlVKtm4Gq4/G6",
+  "type": "applicant",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dbaa84615fb006582a6133"
+  },
+  "email": "pamodou344@gmail.com",
+  "password": "$2b$10$qz1QUrRWkKoliD.wY2SPbOOjIi.TclDqnIA.6C5cen1AtiS6RZWc2",
+  "type": "applicant",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65def37b76163dae102dd482"
+  },
+  "email": "pa@gmail.com",
+  "password": "$2b$10$DpJ94ZyYqPOKylTWO9bdUOdKLIX7nQLzHSDNBEpOvj0LOs9YkpA0.",
+  "type": "recruiter",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65df0cfa9abc4aaef8e62e24"
+  },
+  "email": "test1@gmail.com",
+  "password": "$2b$10$G7IMRPVh3AggzPWGRQs7P.U/brIT5KYgQAGucXgTwQR/hsCLLkElS",
+  "type": "recruiter",
+  "__v": 0
+}]
